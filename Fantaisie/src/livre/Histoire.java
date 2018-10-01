@@ -1,7 +1,7 @@
 package livre;
-import Dragon;
-import Heros;
-import Homme;
+import jeuRole.Dragon;
+import jeuRole.Heros;
+import jeuRole.Homme;
 
 public class Histoire {
 	public static void main(String[] args) {
