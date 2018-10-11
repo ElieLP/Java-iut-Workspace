@@ -13,19 +13,31 @@ import junit.framework.TestCase;
  */
 public class MyDateTest extends TestCase {
 	
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	@After
-	public void tearDown() throws Exception {
-	}
-
 	@Test
-	public void MyDateNextDayTest() {
+	public void testMyDateNextDayYearChange() {
 		MyDate d = new MyDate(31, 12, 2006);
 		d.nextDay();
-        assertEquals(31, d.getDay());
+        assertEquals(1, d.getDay());
+        assertEquals(1, d.getMonth());
+        assertEquals(2007, d.getYear());
+	}
+	
+	@Test
+	public void testMyDateNextDayMonthChange() {
+		MyDate d = new MyDate(30, 11, 2006);
+		d.nextDay();
+        assertEquals(1, d.getDay());
+        assertEquals(12, d.getMonth());
+        assertEquals(2006, d.getYear());
+	}
+	
+	@Test
+	public void testMyDateNextDay() {
+		MyDate d = new MyDate(15, 11, 2006);
+		d.nextDay();
+        assertEquals(16, d.getDay());
+        assertEquals(11, d.getMonth());
+        assertEquals(2006, d.getYear());
 	}
 
 	@Test

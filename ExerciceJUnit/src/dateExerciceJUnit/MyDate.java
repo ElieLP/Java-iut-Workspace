@@ -79,7 +79,19 @@ class MyDate {
      * @return this (my)date
      */
     public MyDate nextDay() {
-        setDay(_day + 1);
+    	int newDay = _day + 1;
+    	if (newDay > maxDayOfMonth(_month,_year)) {
+			setDay(1);
+			setMonth(_month + 1);
+			if (_month > 12) {
+				setMonth(1);
+				setYear(_year + 1);
+			}
+		} else {
+			setDay(_day + 1);
+		}
+    	
+        
         return this;
     }
     
