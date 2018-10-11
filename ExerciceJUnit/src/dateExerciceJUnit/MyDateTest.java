@@ -103,10 +103,17 @@ public class MyDateTest extends TestCase {
     }
 
 	@Test
-    public void testFebruaryValidLimitDates() {
+    public void testNonBissextileYear() {
+        boolean b = MyDate.isValidDate(29, 2, 2001);
+        assertFalse("29 février 2001 est une date invalide", b);
+    }
+	
+	@Test
+    public void testBissextileYear() {
         boolean b = MyDate.isValidDate(29, 2, 2000);
         assertTrue("29 février 2000 est une date valide", b);
     }
+
 
 	@Test
     public void testFebruaryInvalidLimitDates() {
