@@ -1,36 +1,36 @@
 package livre;
 
 //import jeuRole.Arc;
-//import jeuRole.Bataille;
-//import jeuRole.Dragon;
-//import jeuRole.EntiteLivre;
+import jeuRole.Bataille;
+import jeuRole.Dragon;
+import jeuRole.EntiteLivre;
 //import jeuRole.Epee;
-//import jeuRole.Heros;
-//import jeuRole.Homme;
+import jeuRole.Heros;
+import jeuRole.Homme;
 //import jeuRole.LancePierre;
 
 public class MonHistoire {
 
 	public static void main(String[] args) {
 
-//		Livre livre = new Ecran();
+		Livre livre = new Ecran();
+		EntiteLivre.setLivre(livre);
 //		Livre livre = new Fichier();
-//		EntiteLivre.affecterLivre(livre);
 //
-//		Bataille bataille = new Bataille();
+		Bataille bataille = new Bataille();
 //
-//		Dragon dragonRouge = new Dragon("Rougeoyant");
-//		Dragon dragonet = new Dragon("Dragonet");
-//		Homme thomas = new Homme("Thomas");
-//		Heros arthur = new Heros("Arthur");
+		Dragon dragonRouge = new Dragon("Rougeoyant");
+		Dragon dragonet = new Dragon("Dragonet");
+		Homme thomas = new Homme("Thomas");
+		Heros arthur = new Heros("Arthur");
 //		Epee excalibur = new Epee("Excalibur");
 //		Arc transperce = new Arc(3);
 //		LancePierre lancePierre = new LancePierre(); 
 //		
-//		dragonRouge.rejointBataille(bataille);
-//		dragonet.rejointBataille(bataille);
-//		thomas.rejointBataille(bataille);
-//		arthur.rejointBataille(bataille);
+		dragonRouge.rejointBataille(bataille);
+		dragonet.rejointBataille(bataille);
+		thomas.rejointBataille(bataille);
+		arthur.rejointBataille(bataille);
 //		
 //		arthur.prendre(excalibur);
 //		arthur.combattre(dragonet);

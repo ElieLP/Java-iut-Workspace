@@ -1,9 +1,9 @@
 package jeuRole;
 
-public class EtreVivant {
+public abstract class EtreVivant extends EntiteLivre {
 	protected int nbPV;
 	protected String nom;
-	private Bataille bataille;
+	protected Bataille bataille;
 	
 	public String getNom() {
 		return nom;
@@ -32,6 +32,9 @@ public class EtreVivant {
 	public void rejointBataille(Bataille bataille) {
 		this.bataille = bataille;
 	}
+	
+	public abstract void mourir(EtreVivant etreVivant, Bataille bataille);
+
 	
 	
 	

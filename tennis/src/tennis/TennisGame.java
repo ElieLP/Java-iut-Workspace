@@ -1,36 +1,52 @@
 package tennis;
 
 public class TennisGame {
+	private String namePlayer1;
+	private String namePlayer2;
 	private int scorePlayer1;
 	private int scorePlayer2;
-	public static final String tabScores[] = { "love", "fifteen", "thirty", "forty" };
+	public static final String tabScores[] = { "Love", "Fifteen", "Thirty", "Forty" };
 
 	public TennisGame() {
+		this.namePlayer1 = "player1";
+		this.namePlayer2 = "player2";
+		this.scorePlayer1 = 0;
+		this.scorePlayer2 = 0;
+	}
+	
+	public TennisGame(String player1, String player2) {
+		this.namePlayer1 = player1;
+		this.namePlayer2 = player2;
 		this.scorePlayer1 = 0;
 		this.scorePlayer2 = 0;
 	}
 
-	public String currentScore() {
+	public String getScore() {
 		if (this.player1Won()) {
-			return "game for player1";
+			return "Win for player1";
 		}
 		if (this.player2Won()) {
-			return "game for player2";
+			return "Win for player2";
 		}
 		if (this.gameThatLastsALongTime()) {
-			return this.DeuceOrAdvantage();
+			return this.deuceOrAdvantage();
 		}
-		return tabScores[this.scorePlayer1] + " - " + tabScores[this.scorePlayer2];
+		if (tabScores[this.scorePlayer1] == tabScores[this.scorePlayer2]) {
+			return tabScores[this.scorePlayer1] + "-All";
+		} else {
+			return tabScores[this.scorePlayer1] + "-" + tabScores[this.scorePlayer2];
+		}
+		
 	}
 
-	private String DeuceOrAdvantage() {
+	private String deuceOrAdvantage() {
 		if (this.scorePlayer1 == this.scorePlayer2) {
-			return "deuce";
+			return "Deuce";
 		}
 		if (this.scorePlayer1 > this.scorePlayer2) {
-			return ("advantage for player1");
+			return ("Advantage player1");
 		}
-		return ("advantage for player2");
+		return ("Advantage player2");
 	}
 
 	private boolean gameThatLastsALongTime() {
@@ -49,11 +65,14 @@ public class TennisGame {
 		return (score1 >= 4 && score1 - score2 >= 2);
 	}
 
-	public void player1Scores() {
-		this.scorePlayer1 += 1;
-	}
-
-	public void player2Scores() {
-		this.scorePlayer2 += 1;
+	public void wonPoint(String player) {
+		if (player == namePlayer1) {
+			this.scorePlayer1 += 1;
+		} else if (player == namePlayer2){
+			this.scorePlayer2 += 1;
+		} else {
+			System.out.println("wonPoint("+ player +") player "+ player +" doesn't exist");
+		}
+		
 	}
 }

@@ -9,4 +9,10 @@ public class Heros extends Homme {
 		System.out.print("Le héros ");
 		super.parler(texte);
 	}
+	
+	@Override
+	public void rejointBataille(Bataille bataille) {
+		super.rejointBataille(bataille);
+		bataille.ajouter(this);
+	}
 }
